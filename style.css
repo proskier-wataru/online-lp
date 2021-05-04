@@ -1,0 +1,566 @@
+@charset "UTF-8";
+/* 全体に対するCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.block {
+  display: initial;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hover {
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 50px;
+  padding: 20px;
+  font-family: "Trattatello", sans-serif;
+}
+
+i {
+  margin: 10px;
+}
+
+/* .fuchidori {
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-size: 20px;
+  background-color: opacity(0.8) black;
+} */
+
+.border {
+  display: inline-block;
+  border-bottom: solid 5px rgba(218, 225, 12, 0.998);
+}
+.border2 {
+  /* display: inline-block; */
+  width: 250px;
+  text-align: center;
+  border-bottom: solid 3px rgba(84 225 12 / 66%);
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+  color: white;
+}
+
+.content-topics p {
+  padding: 0px;
+  text-align: left;
+  margin: 0px;
+}
+.content-aboutme {
+  color: white;
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(151, 217, 225, 0.7) 100%
+    ),
+    url(img/img-profile.JPG);
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  background-position: right 35% bottom 5%;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.content-aboutme p {
+  padding: 10px;
+  /* text-align: left; */
+  margin: 0px;
+  width: 100%;
+}
+
+.about-me-text {
+  /* text-align: center; */
+  background-color: rgb(0, 0, 0, 0.2);
+  margin-top: 0px;
+}
+.about-me-media {
+  margin-top: 307px;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+/* olのスタイル */
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* デフォルトの数字を非表示に */
+  counter-reset: li;
+}
+
+/* ol内のliのスタイル */
+ol li {
+  position: relative;
+  font-size: 16px;
+  padding-left: 1.5em;
+  line-height: 1.5;
+}
+
+/* 2つ目以降のliにmargin-topを指定 */
+ol li:not(:first-child) {
+  margin-top: 0.5em;
+}
+
+/* 数字のスタイル */
+ol li::before {
+  counter-increment: li;
+  content: counter(li);
+  position: absolute;
+  left: 0;
+  top: 2px; /* 数字のY軸線上の位置を調整 */
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #2f5192;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+}
+
+ol li {
+  text-align: left;
+}
+
+/* containerに関するcss */
+
+.img-area p {
+  color: white;
+  text-align: center;
+}
+
+.box {
+  height: 300px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  background-color: #eee;
+}
+
+.blue-color {
+  color: #0078c8;
+  font-family: Impact;
+}
+
+.blue-color p {
+  text-align: left;
+  /* margin: 10 auto; */
+}
+
+/* header */
+.header {
+  background-color: #2f5192;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.headerp {
+  font-size: 45px;
+  color: white;
+}
+/* ---- header-ハンバーガーアイコン ---- */
+#hm-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-child(1) {
+  top: 0;
+}
+.menu-trigger span:nth-child(2) {
+  top: 20px;
+}
+.menu-trigger span:nth-child(3) {
+  bottom: 0;
+}
+.menu-trigger.active span:nth-child(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
+  background-color: #fff;
+}
+.menu-trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-child(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+/* ------------------------ */
+/* ------ spメニュー ------ */
+/* ------------------------ */
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#sp-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* containerに関するCSS */
+.img-area {
+  background: linear-gradient(
+      to top,
+      rgba(217, 175, 217, 0.7) 0%,
+      rgba(151, 217, 225, 0.7) 100%
+    ),
+    url(img/bumps.JPG);
+  /* background-image: url(img/bumps.JPG); */
+  background-position: right 0% bottom 70%;
+  background-size: cover;
+  height: 650px;
+  width: 100%;
+  position: relative;
+}
+
+.img-area-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 95%;
+}
+
+.content-topic {
+  text-align: center;
+}
+
+.content-topic-left {
+  text-align: left;
+}
+.content-topics {
+  margin: 45px 10px;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+}
+.topic-left-h4 {
+  background-color: red;
+  color: white;
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.content-topic-event-title {
+  width: 100%;
+  height: 70px;
+  background-color: blue;
+}
+
+.content-aboutus {
+  text-align: center;
+}
+
+/* 斜めのCSS */
+body {
+  font: 16px/1.5 sans-serif;
+  color: #666;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+p {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.Block2 {
+  /*レイアウト用のCSS*/
+  padding: 10px 0px 40px 50px;
+  background-color: #191970;
+  color: #ccc;
+}
+.Block3 {
+  /*レイアウト用のCSS*/
+  padding: 10px 0px 40px 50px;
+  background-color: #191970;
+  color: #ccc;
+}
+.Block1 {
+  position: relative;
+  padding: 20px 0 80px 0;
+}
+.Block1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  /*ここで三角形のサイズを決める。
+  必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+  border-width: 40px 0 0 100vw;
+
+  border-color: transparent transparent transparent #191970;
+}
+
+.content-entry-center {
+  margin: 30px 0px;
+  width: 500px;
+  /* background-color: pink; */
+  display: inline-block;
+}
+
+/* btn */
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-c {
+  font-size: 1.8rem;
+
+  position: relative;
+
+  padding: 2rem 4rem 2rem 2rem;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+
+  color: #fff;
+  border-radius: 100vh;
+  /* background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#007adf),
+    to(#00ecbc)
+  ); */
+  background-image: -webkit-linear-gradient(left, #007adf 0%, #00ecbc 100%);
+  background-image: linear-gradient(to right, #007adf 0%, #00ecbc 100%);
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+a.btn-c:before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.6rem;
+  line-height: 1;
+
+  position: absolute;
+  top: calc(50% - 0.8rem);
+  right: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+  content: "\f30b";
+}
+
+a.btn-c:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+
+  color: #fff;
+}
+
+/* 大会の歴史に関するCSS */
+.contents .content-history {
+  text-align: center;
+  margin-top: 50px;
+  color: black;
+  overflow: hidden;
+}
+.contents .content-history-true {
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  background-color: #191970;
+}
+
+.history-devide {
+  display: flex;
+  justify-content: center;
+}
+
+.content-aboutme {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* resultに関するcss */
+.content-result {
+  margin-top: 0px;
+  padding: 20px 0px;
+}
+.content-result-area {
+  display: flex;
+  justify-content: center;
+}
+
+.result-area {
+  margin: auto;
+  position: absolute;
+  /* text-align: center; */
+}
+
+.result-area-texts {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+}
+
+.result2020 {
+  width: 425px;
+  /* margin-right: auto; */
+}
+.result2020 ul li {
+  list-style: none;
+  text-align: center;
+}
+.result2021 {
+  width: 425px;
+  /* margin-left: auto; */
+}
+.result2021 ul li {
+  list-style: none;
+  text-align: center;
+}
+
+/* footerのcss */
+footer {
+  background-color: rgba(25, 25, 112);
+  color: white;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: inline-block; */
+}
+
+.footer-area {
+  /* text-align: center; */
+}
+
+/* ★★★★タブレット縦置きサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 768px) {
+  /* 共通 */
+  p {
+    width: 95%;
+    margin: 0 auto;
+    padding: 29px 0;
+  }
+  .body {
+    overflow: hidden;
+  }
+
+  .content-topics {
+    display: block;
+    text-align: center;
+  }
+
+  .Block2 {
+    padding: 10px 0px 0px 0px;
+  }
+  .content-entry-center {
+    margin: 30px;
+  }
+  .history-devide {
+    display: block;
+    padding-bottom: 10px;
+  }
+  .content-entry-center {
+    width: 95%;
+    margin: 0px;
+  }
+  .left {
+    background-color: rgba(217, 175, 217, 0.3);
+  }
+  .right {
+    background-color: rgba(151, 217, 225, 0.3);
+  }
+  .content-result {
+    margin-top: 20px;
+  }
+  .content-result-area {
+    display: block;
+    margin: 20px 0px;
+  }
+  .result2020 {
+    margin-bottom: 20px;
+  }
+}
